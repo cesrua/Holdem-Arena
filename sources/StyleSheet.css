@@ -1,0 +1,158 @@
+body {
+    background: #251f1f;
+}
+
+p {
+    font-size: 20px;
+    height: 47px;
+    width: 160px;
+}
+
+#maincontainer {
+    width: 1000px;
+    margin: 0 auto; 
+}
+
+#header {
+    background: #251f1f;
+    height: 80px;
+}
+
+#Arena {
+    background-image: url(Tables/Table_Shorthanded.png);
+    height: 600px;
+}
+
+#raiseButton {
+    position: relative;
+    height: 41px;
+    width: 104px;
+    background: #8B0000;
+    text-align: center;
+}
+
+#foldButton {
+    position: relative;
+    height: 41px;
+    width: 104px;
+    background: #8B0000;
+    text-align: center;
+    margin-right: 0px;
+}
+
+#FirstCard {
+    position: relative;
+    height: 120px;
+    width: 80px;
+}
+
+#FirstCard.FR {
+    left:200px;
+}
+
+#SecondCard {
+    position: relative;
+    height: 120px;
+    width: 80px;
+}
+
+#SecondCard.FR {
+    left:200px;
+}
+
+#Dealer {
+    position: relative;
+    background-image: url(Tables/Dealer.png);
+    height: 20px;
+    width: 20px;
+}
+
+#Dealer.SHORTHANDEDEP {
+    left:0px;
+}
+#Dealer.SHORTHANDEDMP {
+    left:20px;
+}
+#Dealer.SHORTHANDEDCO {
+    left:40px;
+}
+#Dealer.SHORTHANDEDBU {
+    left:60px;
+}
+#Dealer.SHORTHANDEDSB {
+    left:80px;
+}
+#Dealer.SHORTHANDEDBB {
+    left:100px;
+}
+#Dealer.FULLRINGEP {
+    left:300px;
+}
+#Dealer.FULLRINGEP2 {
+    left:320px;
+}
+#Dealer.FULLRINGMP {
+    left:340px;
+}
+#Dealer.FULLRINGMP2 {
+    left:360px;
+}
+#Dealer.FULLRINGMP3 {
+    left:380px;
+}
+#Dealer.FULLRINGCO {
+    left:400px;
+}
+#Dealer.FULLRINGBU {
+    left:420px;
+}
+#Dealer.FULLRINGSB {
+    left:440px;
+}
+#Dealer.FULLRINGBB {
+    left:360px;
+}
+
+#logo {
+    left:0px;
+}
+
+#footer {
+    position: relative;
+    clear: left;
+    width: 100%;
+    background: black;
+    color: #FFF;
+    text-align: center;
+    padding: 4px 0;
+}
+
+table {
+    width: 130px;
+    margin: 0px auto;
+    border: 1px solid #464646;
+}
+
+table .row {
+    height: 15px;
+}
+
+.cell {
+	background-color: #d9e0d6;
+	color: black;
+	border:1px solid #464646;
+	height:25px;
+	padding:2px;
+	text-align:center;
+	width:34px;
+	font-weight:normal;
+    font-size:0.75em;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#SaveButton {
+    position: relative;
+    height: 41px;
+    width: 104px;
+    background: #8B0000;
+    text-align: center;
+}

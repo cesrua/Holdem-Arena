@@ -1,0 +1,164 @@
+/* default tables */ 
+table {
+    width: 130px;
+    margin: 0px auto;
+    /*border-collapse: collapse;*/
+    border: 1px solid #464646;
+}
+table .row {
+    height: 15px;
+}
+table .cell {
+	/*background: #d9e0d6;*/
+	background-color: #d9e0d6;
+	border:1px solid #464646;
+	height:25px;
+	padding:2px;
+	text-align:center;
+	width:34px;
+	font-weight:normal;
+    font-size:0.75em;
+    font-family:Arial, Helvetica, sans-serif;
+    /*font-weight:bold;*/
+}
+/*table tr th, table tr td {
+	padding:5px 10px; 
+}
+table tr th {
+	background:#3D4A57 none repeat-x scroll bottom left;
+	color:#ffffff;
+	border-top:2px solid #526475;
+}
+table tr td {
+	border-bottom:1px solid #dddddd;
+}*/
+
+-----------------------------------------
+/* misc classes */
+*:focus {
+	outline:none;
+}
+.clear {
+	clear:both;
+}
+.inv {
+    display:none;
+}
+
+div.calculator-wrap {
+	/*width: auto;*/
+	/*height: 475px;*/
+}
+div.calculator-left {
+	background-color:#ffffff;
+	float:left;
+    width: 55%;
+	text-align: center;
+	/*border:1px solid #e0e0e0;
+	margin:10px;*/
+	height: 100%;
+	/*margin-right: 2px;*/
+	border:1px solid #e0e0e0;
+	margin: 2px;
+	padding: 2px;
+}
+
+div.calculator-right {
+	height: 100%;
+	float:left;
+	/*border:1px solid #e0e0e0;*/
+	width:42%;
+	margin: 2px;
+}
+
+div.calculator-grid {
+    width: 100%;
+    float: top;
+    /*border:1px solid #e0e0e0;
+    maring:10px;*/
+}
+div.calculator-link {
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+    /*border:1px solid #e0e0e0;
+    margin:10px;*/
+    height:auto;
+}
+
+div.element-header {
+	height: 15px;
+	clear:both;
+	padding: 5px;
+}
+
+div.element-header h6 {
+    text-align: left;
+    font-size:0.6em;
+}
+
+div.element-contents {
+    height: auto;
+    float:top;
+}
+
+div.calculator-range {
+    background-color:#ffffff;
+    /*border:1px solid #e0e0e0;
+    margin:10px;*/
+    word-spacing: normal;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 100px;
+    margin-left: 2px;
+    text-align:center;
+    border:1px solid #e0e0e0;
+}
+
+div.slider-value-wrap {
+    float: top;
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    align:center;
+}
+
+div.slider-value-wrap p {
+    text-align: center;
+}
+
+div.slider-wrap {
+	float: top;
+    width: auto;
+    align: center;
+    margin: 10px;
+}
+
+div.slider-ticks {
+	clear:both;
+	widht:100%;
+}
+
+div.slider-ticks-0 p {
+	width:50%;
+	clear:both;
+    float: left;
+    text-align: left;
+    font-size:0.6em;
+}
+
+div.slider-ticks-100 p {
+    width:auto;
+    text-align: right;
+    font-size:0.6em;
+}
+
+div.calculator-hands {
+    /*border:1px solid #e0e0e0;
+    margin:10px;*/
+    border-top:0; 
+    height: auto;
+    clear:both;
+    float: top;
+    border:1px solid #e0e0e0;
+}

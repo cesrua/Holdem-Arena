@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Holdem Arena</title>
+	<script src="sources/jquery.js" type="text/javascript"></script>
+	<script src="sources/games.js" type="text/javascript"></script>
+	<link href="sources/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script>
+        document.onselectstart = function () { return false; }
+        document.onmousedown = function () { return false; }
+    </script>
+</head>
+<body>
+	<div id="maincontainer">
+	    <div id="header">
+	    	<div id="logo"><img src="sources/logos/header_logo.png" /></div>    	
+	    </div>    
+		<div id="Arena">			
+			<div id="Control_Panel">
+				<table>
+					<tr>
+						<td>Hands</td>
+						<td>Accuracy</td>
+						<td>Tables</td>
+					</tr>
+					<tr>
+						<td id="indHands">-</td>
+						<td id="indAccuracy">-</td>
+						<td id="indSpeed">-</td>
+					</tr>
+				</table>
+			</div>
+			<div id="Dealer"></div>
+			<div id="FirstCard"></div>
+			<div id="SecondCard"></div>
+			<a id="raiseButton">RAISE</a>
+			<a id="foldButton">FOLD</a>
+		</div>
+		<div id="PreflopArena">Explicacion epica de para que sirve el preflop arena</div>
+		<div id="StrategyConfigurationSpace">
+			<form>
+				<input id="L" type="radio" name="radio" disabled/>Limp
+				<input id="radio2" type="radio" name="radio" checked/>OR
+				<input id="radio3" type="radio" name="radio" disabled/>ROR
+				<input id="radio4" type="radio" name="radio" disabled/>3Bet
+				<input id="radio5" type="radio" name="radio" disabled/>C3Bet
+				<input id="radio6" type="radio" name="radio" disabled/>Sqz
+				<input id="radio7" type="radio" name="radio" disabled/>CSqz
+				<input id="radio8" type="radio" name="radio" disabled/>4Bet
+				<input id="radio9" type="radio" name="radio" disabled/>C4Bet
+				<input id="radio10" type="radio" name="radio" disabled/>C5Bet
+				<input id="radi011" type="radio" name="radio" disabled/>All in
+			</form>
+			<form>
+				<input id="EP" type="radio" name="radio" checked/>EP
+				<input id="EP2" type="radio" name="radio" disabled/>EP2
+				<input id="MP" type="radio" name="radio" />MP
+				<input id="MP2" type="radio" name="radio" disabled/>MP2
+				<input id="MP3" type="radio" name="radio" disabled/>MP3
+				<input id="CO" type="radio" name="radio" />CO
+				<input id="BU" type="radio" name="radio" />BU
+				<input id="SB" type="radio" name="radio" />SB
+				<input id="BB" type="radio" name="radio" disabled/>BB
+			</form>
+			<div id="table" class="rangeGrid">
+			    <table id="fullTable" cellspacing="2" cellpadding="0">
+					<tr class="row">
+						<td id="AA"  class="cell">AA</td>					  
+						<td id="AKs" class="cell">AKs</td>
+						<td id="AQs" class="cell">AQs</td>					  
+						<td id="AJs" class="cell">AJs</td>					  
+						<td id="ATs" class="cell">ATs</td>					  
+						<td id="A9s" class="cell">A9s</td>
+						<td id="A8s" class="cell">A8s</td>
+						<td id="A7s" class="cell">A7s</td>
+						<td id="A6s" class="cell">A6s</td>
+						<td id="A5s" class="cell">A5s</td>
+						<td id="A4s" class="cell">A4s</td>
+						<td id="A3s" class="cell">A3s</td>
+						<td id="A2s" class="cell">A2s</td>
+			        </tr>
+					<tr class="row">
+						<td id="AKo" class="cell">AKo</td>
+						<td id="KK"  class="cell">KK</td>
+						<td id="KQs" class="cell">KQs</td>
+						<td id="KJs" class="cell">KJs</td>
+						<td id="KTs" class="cell">KTs</td>
+						<td id="K9s" class="cell">K9s</td>
+						<td id="K8s" class="cell">K8s</td>
+						<td id="K7s" class="cell">K7s</td>
+						<td id="K6s" class="cell">K6s</td>
+						<td id="K5s" class="cell">K5s</td>
+						<td id="K4s" class="cell">K4s</td>
+						<td id="K3s" class="cell">K3s</td>
+						<td id="K2s" class="cell">K2s</td>
+					</tr>
+			        <tr class="row">
+				        <td id="AQo" class="cell">AQo</td>
+				        <td id="KQo" class="cell">KQo</td>
+				        <td id="QQ"  class="cell">QQ</td>
+				        <td id="QJs" class="cell">QJs</td>
+				        <td id="QTs" class="cell">QTs</td>
+				        <td id="Q9s" class="cell">Q9s</td>
+				        <td id="Q8s" class="cell">Q8s</td>
+				        <td id="Q7s" class="cell">Q7s</td>
+				        <td id="Q6s" class="cell">Q6s</td>
+				        <td id="Q5s" class="cell">Q5s</td>
+				        <td id="Q4s" class="cell">Q4s</td>
+				        <td id="Q3s" class="cell">Q3s</td>
+				        <td id="Q2s" class="cell">Q2s</td>
+			        </tr>				
+			        <tr class="row">
+				        <td id="AJo" class="cell">AJo</td>
+				        <td id="KJo" class="cell">KJo</td>
+				        <td id="QJo" class="cell">QJo</td>
+				        <td id="JJ"  class="cell">JJ</td>
+				        <td id="JTs" class="cell">JTs</td>
+				        <td id="J9s" class="cell">J9s</td>
+				        <td id="J8s" class="cell">J8s</td>
+				        <td id="J7s" class="cell">J7s</td>
+				        <td id="J6s" class="cell">J6s</td>
+				        <td id="J5s" class="cell">J5s</td>
+				        <td id="J4s" class="cell">J4s</td>
+				        <td id="J3s" class="cell">J3s</td>
+				        <td id="J2s" class="cell">J2s</td>
+				  
+			                </tr>				
+			        <tr class="row">
+				        <td id="ATo" class="cell">ATo</td>
+				        <td id="KTo" class="cell">KTo</td>
+				        <td id="QTo" class="cell">QTo</td>
+				        <td id="JTo" class="cell">JTo</td>
+				        <td id="TT"  class="cell">TT</td>
+				        <td id="T9s" class="cell">T9s</td>
+				        <td id="T8s" class="cell">T8s</td>
+				        <td id="T7s" class="cell">T7s</td>
+				        <td id="T6s" class="cell">T6s</td>
+				        <td id="T5s" class="cell">T5s</td>
+				        <td id="T4s" class="cell">T4s</td>
+				        <td id="T3s" class="cell">T3s</td>
+				        <td id="T2s" class="cell">T2s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A9o" class="cell">A9o</td>
+				        <td id="K9o" class="cell">K9o</td>
+				        <td id="Q9o" class="cell">Q9o</td>
+				        <td id="J9o" class="cell">J9o</td>
+				        <td id="T9o" class="cell">T9o</td>
+				        <td id="99"  class="cell">99</td>
+				        <td id="98s" class="cell">98s</td>
+				        <td id="97s" class="cell">97s</td>
+				        <td id="96s" class="cell">96s</td>
+				        <td id="95s" class="cell">95s</td>
+				        <td id="94s" class="cell">94s</td>
+				        <td id="93s" class="cell">93s</td>
+				        <td id="92s" class="cell">92s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A8o" class="cell">A8o</td>
+				        <td id="K8o" class="cell">K8o</td>
+				        <td id="Q8o" class="cell">Q8o</td>
+				        <td id="J8o" class="cell">J8o</td>
+				        <td id="T8o" class="cell">T8o</td>
+				        <td id="98o" class="cell">98o</td>
+				        <td id="88"  class="cell">88</td>
+				        <td id="87s" class="cell">87s</td>
+				        <td id="86s" class="cell">86s</td>
+				        <td id="85s" class="cell">85s</td>
+				        <td id="84s" class="cell">84s</td>
+				        <td id="83s" class="cell">83s</td>
+				        <td id="82s" class="cell">82s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A7o" class="cell">A7o</td>
+				        <td id="K7o" class="cell">K7o</td>
+				        <td id="Q7o" class="cell">Q7o</td>
+				        <td id="J7o" class="cell">J7o</td>
+				        <td id="T7o" class="cell">T7o</td>
+				        <td id="97o" class="cell">97o</td>
+				        <td id="87o" class="cell">87o</td>
+				        <td id="77"  class="cell">77</td>
+				        <td id="76s" class="cell">76s</td>
+				        <td id="75s" class="cell">75s</td>
+				        <td id="74s" class="cell">74s</td>
+				        <td id="73s" class="cell">73s</td>
+				        <td id="72s" class="cell">72s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A6o" class="cell">A6o</td>
+				        <td id="K6o" class="cell">K6o</td>
+				        <td id="Q6o" class="cell">Q6o</td>
+				        <td id="J6o" class="cell">J6o</td>
+				        <td id="T6o" class="cell">T6o</td>
+				        <td id="96o" class="cell">96o</td>
+				        <td id="86o" class="cell">86o</td>
+				        <td id="76o" class="cell">76o</td>
+				        <td id="66"  class="cell">66</td>
+				        <td id="65s" class="cell">65s</td>
+				        <td id="64s" class="cell">64s</td>
+				        <td id="63s" class="cell">63s</td>
+				        <td id="62s" class="cell">62s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A5o" class="cell">A5o</td>
+				        <td id="K5o" class="cell">K5o</td>
+				        <td id="Q5o" class="cell">Q5o</td>
+				        <td id="J5o" class="cell">J5o</td>
+				        <td id="T5o" class="cell">T5o</td>
+				        <td id="95o" class="cell">95o</td>
+				        <td id="85o" class="cell">85o</td>
+				        <td id="75o" class="cell">75o</td>
+				        <td id="65o" class="cell">65o</td>
+				        <td id="55"  class="cell">55</td>
+				        <td id="54s" class="cell">54s</td>
+				        <td id="53s" class="cell">53s</td>
+				        <td id="52s" class="cell">52s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A4o" class="cell">A4o</td>
+				        <td id="K4o" class="cell">K4o</td>
+				        <td id="Q4o" class="cell">Q4o</td>
+				        <td id="J4o" class="cell">J4o</td>
+				        <td id="T4o" class="cell">T4o</td>
+				        <td id="94o" class="cell">94o</td>
+				        <td id="84o" class="cell">84o</td>
+				        <td id="74o" class="cell">74o</td>
+				        <td id="64o" class="cell">64o</td>
+				        <td id="54o" class="cell">54o</td>
+				        <td id="44"  class="cell">44</td>
+				        <td id="43s" class="cell">43s</td>
+				        <td id="42s" class="cell">42s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A3o" class="cell">A3o</td>
+				        <td id="K3o" class="cell">K3o</td>
+				        <td id="Q3o" class="cell">Q3o</td>
+				        <td id="J3o" class="cell">J3o</td>
+				        <td id="T3o" class="cell">T3o</td>
+				        <td id="93o" class="cell">93o</td>
+				        <td id="83o" class="cell">83o</td>
+				        <td id="73o" class="cell">73o</td>
+				        <td id="63o" class="cell">63o</td>
+				        <td id="53o" class="cell">53o</td>
+				        <td id="43o" class="cell">43o</td>
+				        <td id="33"  class="cell">33</td>
+				        <td id="32s" class="cell">32s</td>
+			        </tr>
+			        <tr class="row">
+				        <td id="A2o" class="cell">A2o</td>
+				        <td id="K2o" class="cell">K2o</td>
+				        <td id="Q2o" class="cell">Q2o</td>
+				        <td id="J2o" class="cell">J2o</td>
+				        <td id="T2o" class="cell">T2o</td>
+				        <td id="92o" class="cell">92o</td>
+				        <td id="82o" class="cell">82o</td>
+				        <td id="72o" class="cell">72o</td>
+				        <td id="62o" class="cell">62o</td>
+				        <td id="52o" class="cell">52o</td>
+				        <td id="42o" class="cell">42o</td>
+				        <td id="32o" class="cell">32o</td>
+				        <td id="22"  class="cell"> 22</td>
+			        </tr>
+			    </table>    
+			</div>
+			<div id="prueba"></div>
+			<div id="percentRange"></div>
+			<div id="GameTypeSelection">
+				<form style="margin-top: 1em; margin-bottom: 1em;">
+					<input id="SHORTHANDED" type="radio" name="radio" checked/>SHORTHANDED
+					<input id="FULLRING" type="radio" name="radio" />FULLRING
+				</form>
+			</div>
+			<a id="SaveButton">SAVE</a>
+		</div>
+	</div>
+</body>
+</html>
